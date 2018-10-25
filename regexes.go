@@ -3,16 +3,16 @@ package validator
 import "regexp"
 
 const (
-	alphaRegexString               = "^[a-zA-Z]+$"
-	alphaNumericRegexString        = "^[a-zA-Z0-9]+$"
-	alphaNumericCustom1RegexString = "^[a-z][a-z0-9\\-\\.]+$"
-	alphaUnicodeRegexString        = "^[\\p{L}]+$"
-	alphaUnicodeNumericRegexString = "^[\\p{L}\\p{N}]+$"
-	numericRegexString             = "^[-+]?[0-9]+(?:\\.[0-9]+)?$"
-	numberRegexString              = "^[0-9]+$"
-	hexadecimalRegexString         = "^[0-9a-fA-F]+$"
-	hexcolorRegexString            = "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
-	rgbRegexString                 = "^rgb\\(\\s*(?:(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])|(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%)\\s*\\)$"
+	alphaRegexString                 = "^[a-zA-Z]+$"
+	alphaNumericRegexString          = "^[a-zA-Z0-9]+$"
+	alphaNumericCustom1RegexString   = "^[a-z][a-z0-9\\-\\.]+$"
+	alphaUnicodeRegexString          = "^[\\p{L}]+$"
+	alphaUnicodeNumericRegexString   = "^[\\p{L}\\p{N}]+$"
+	numericRegexString               = "^[-+]?[0-9]+(?:\\.[0-9]+)?$"
+	numberRegexString                = "^[0-9]+$"
+	hexadecimalRegexString           = "^[0-9a-fA-F]+$"
+	hexcolorRegexString              = "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+	rgbRegexString                   = "^rgb\\(\\s*(?:(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])|(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%)\\s*\\)$"
 	rgbaRegexString                  = "^rgba\\(\\s*(?:(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])|(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%)\\s*,\\s*(?:(?:0.[1-9]*)|[01])\\s*\\)$"
 	hslRegexString                   = "^hsl\\(\\s*(?:0|[1-9]\\d?|[12]\\d\\d|3[0-5]\\d|360)\\s*,\\s*(?:(?:0|[1-9]\\d?|100)%)\\s*,\\s*(?:(?:0|[1-9]\\d?|100)%)\\s*\\)$"
 	hslaRegexString                  = "^hsla\\(\\s*(?:0|[1-9]\\d?|[12]\\d\\d|3[0-5]\\d|360)\\s*,\\s*(?:(?:0|[1-9]\\d?|100)%)\\s*,\\s*(?:(?:0|[1-9]\\d?|100)%)\\s*,\\s*(?:(?:0.[1-9]*)|[01])\\s*\\)$"
@@ -38,24 +38,24 @@ const (
 	btcAddressUpperRegexStringBech32 = `^BC1[02-9AC-HJ-NP-Z]{7,76}$`              // bitcoin bech32 address https://en.bitcoin.it/wiki/Bech32
 	btcAddressLowerRegexStringBech32 = `^bc1[02-9ac-hj-np-z]{7,76}$`              // bitcoin bech32 address https://en.bitcoin.it/wiki/Bech32
 	ethAddressRegexString            = `^0x[0-9a-fA-F]{40}$`
-	ethAddressUpperRegexString     = `^0x[0-9A-F]{40}$`
-	ethAddressLowerRegexString     = `^0x[0-9a-f]{40}$`
-	uRLEncodedRegexString          = `(%[A-Fa-f0-9]{2})`
-	hTMLEncodedRegexString         = `&#[x]?([0-9a-fA-F]{2})|(&gt)|(&lt)|(&quot)|(&amp)+[;]?`
-	hTMLRegexString                = `<[/]?([a-zA-Z]+).*?>`
+	ethAddressUpperRegexString       = `^0x[0-9A-F]{40}$`
+	ethAddressLowerRegexString       = `^0x[0-9a-f]{40}$`
+	uRLEncodedRegexString            = `(%[A-Fa-f0-9]{2})`
+	hTMLEncodedRegexString           = `&#[x]?([0-9a-fA-F]{2})|(&gt)|(&lt)|(&quot)|(&amp)+[;]?`
+	hTMLRegexString                  = `<[/]?([a-zA-Z]+).*?>`
 )
 
 var (
-	alphaRegex               = regexp.MustCompile(alphaRegexString)
-	alphaNumericRegex        = regexp.MustCompile(alphaNumericRegexString)
-	alphaNumericCustom1Regex = regexp.MustCompile(alphaNumericCustom1RegexString)
-	alphaUnicodeRegex        = regexp.MustCompile(alphaUnicodeRegexString)
-	alphaUnicodeNumericRegex = regexp.MustCompile(alphaUnicodeNumericRegexString)
-	numericRegex             = regexp.MustCompile(numericRegexString)
-	numberRegex              = regexp.MustCompile(numberRegexString)
-	hexadecimalRegex         = regexp.MustCompile(hexadecimalRegexString)
-	hexcolorRegex            = regexp.MustCompile(hexcolorRegexString)
-	rgbRegex                 = regexp.MustCompile(rgbRegexString)
+	alphaRegex                 = regexp.MustCompile(alphaRegexString)
+	alphaNumericRegex          = regexp.MustCompile(alphaNumericRegexString)
+	alphaNumericCustom1Regex   = regexp.MustCompile(alphaNumericCustom1RegexString)
+	alphaUnicodeRegex          = regexp.MustCompile(alphaUnicodeRegexString)
+	alphaUnicodeNumericRegex   = regexp.MustCompile(alphaUnicodeNumericRegexString)
+	numericRegex               = regexp.MustCompile(numericRegexString)
+	numberRegex                = regexp.MustCompile(numberRegexString)
+	hexadecimalRegex           = regexp.MustCompile(hexadecimalRegexString)
+	hexcolorRegex              = regexp.MustCompile(hexcolorRegexString)
+	rgbRegex                   = regexp.MustCompile(rgbRegexString)
 	rgbaRegex                  = regexp.MustCompile(rgbaRegexString)
 	hslRegex                   = regexp.MustCompile(hslRegexString)
 	hslaRegex                  = regexp.MustCompile(hslaRegexString)
