@@ -4324,6 +4324,7 @@ func TestOneOfValidation(t *testing.T) {
 		t string
 	}{
 		{f: "red", t: "oneof=red green"},
+		{f: "gr-1", t: "oneof=red gr-1"},
 		{f: "green", t: "oneof=red green"},
 		{f: 5, t: "oneof=5 6"},
 		{f: 6, t: "oneof=5 6"},
